@@ -2,6 +2,7 @@
   --paper: #fbfaf6;
   --paper-2: #f4f0e9;
   --ink: #202829;
+  --ink-soft: #344142;
   --muted: #66716f;
   --line: #e5ddd0;
   --accent: #e55343;
@@ -65,12 +66,12 @@ a:hover {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-weight: 680;
   letter-spacing: 0;
 }
 
-.brand img {
+.brand .brand-wordmark {
   width: 154px;
   height: auto;
   object-fit: contain;
@@ -106,7 +107,7 @@ a:hover {
 }
 
 .lang-toggle button[aria-pressed="true"] {
-  background: #273334;
+  background: var(--ink-soft);
   color: #fffaf3;
 }
 
@@ -152,6 +153,11 @@ h1 {
   letter-spacing: 0.02em;
 }
 
+.home-page .hero h1,
+.home-page .section h2 {
+  color: var(--ink-soft);
+}
+
 h2 {
   font-size: clamp(1.35rem, 2.4vw, 2.05rem);
   font-weight: 620;
@@ -166,42 +172,6 @@ h3 {
   margin: 24px 0 0;
   color: var(--muted);
   font-size: clamp(0.98rem, 1.25vw, 1.08rem);
-}
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 34px;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 42px;
-  border: 1px solid rgba(39, 51, 52, 0.88);
-  border-radius: 3px;
-  padding: 0 18px;
-  background: #273334;
-  color: #fffaf3;
-  font-size: 0.86rem;
-  font-weight: 680;
-  box-shadow: 0 10px 26px rgba(39, 51, 52, 0.12);
-  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
-}
-
-.button:hover {
-  color: #fffaf3;
-  background: #182223;
-  box-shadow: 0 14px 32px rgba(39, 51, 52, 0.16);
-  transform: translateY(-1px);
-}
-
-.button.secondary {
-  border-color: var(--line);
-  background: var(--panel);
-  color: var(--ink);
 }
 
 .hero-visual {

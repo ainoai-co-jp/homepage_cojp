@@ -66,13 +66,19 @@ a:hover {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   font-weight: 680;
   letter-spacing: 0;
 }
 
+.brand .brand-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
 .brand .brand-wordmark {
-  width: 154px;
+  width: 170px;
   height: auto;
   object-fit: contain;
 }

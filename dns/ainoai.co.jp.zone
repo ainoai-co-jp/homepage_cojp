@@ -1,0 +1,31 @@
+$ORIGIN ainoai.co.jp.
+$TTL 3600
+
+; Cloudflare import zone file for ainoai.co.jp
+; Do not import the old xdomain NS/SOA records. Cloudflare will provide its own.
+
+; GitHub Pages apex domain records
+@ 3600 IN A 185.199.108.153
+@ 3600 IN A 185.199.109.153
+@ 3600 IN A 185.199.110.153
+@ 3600 IN A 185.199.111.153
+@ 3600 IN AAAA 2606:50c0:8000::153
+@ 3600 IN AAAA 2606:50c0:8001::153
+@ 3600 IN AAAA 2606:50c0:8002::153
+@ 3600 IN AAAA 2606:50c0:8003::153
+
+; Optional www host for GitHub Pages
+www 3600 IN CNAME ainoai-co-jp.github.io.
+
+; Google site/domain verification
+@ 3600 IN TXT "google-site-verification=krN3_nNe4AVk7ZaYmz9bBpK0wjx1s0lZvk7iNrXsYB0"
+fdjryhkkulwe 3600 IN CNAME gv-oa6irpvszf3m7e.dv.googlehosted.com.
+
+; Google mail
+@ 300 IN MX 1 smtp.google.com.
+
+; Google DKIM
+google._domainkey 300 IN TXT (
+  "v=DKIM1;k=rsa;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4zn1FuVkkrGKy7eXyFnRCx8yR+Jqm3UG05dTUcdDeVrlqnchsKcTxpFx/QQkJ8QkVPF3XjkqxWA93+JU/bh3XvNuCTM3uVSn3xXMPB851h760A5LG/aNihgAZACp3XuJVICrNBgenWxZoJtlFW81ynIzB2"
+  "JfZA7coVvnMeOpyCwhzhp+0a1SteIbvapu4o5n2xvobCeciZvEej5z73CV4HfVjrXNwu6LwtBB8YDscsRjTiX70AMG/vcMSA+lZVpn/dkqJhttRe2WUGB14OdoA9Jb0rEGss1ibinAmZxPrkjERYdgzZXAfNrL4bKshGimuAu5pBwh+pqzhVcy/g2XiwIDAQAB"
+)

@@ -331,6 +331,227 @@ h3 {
   vertical-align: middle;
 }
 
+.nav-menu {
+  position: relative;
+}
+
+.nav-menu summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-menu summary::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-3px) rotate(45deg);
+}
+
+.nav-menu summary:hover,
+.nav-menu[open] summary {
+  color: var(--accent);
+}
+
+.nav-menu-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: -16px;
+  z-index: 30;
+  display: grid;
+  min-width: 260px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(255, 254, 250, 0.98);
+  box-shadow: var(--shadow);
+  padding: 6px;
+}
+
+.nav-menu-panel a {
+  display: grid;
+  border-radius: 4px;
+  color: var(--ink);
+  padding: 10px 12px;
+}
+
+.nav-menu-panel a:hover {
+  background: var(--paper-2);
+}
+
+.nav-menu-panel small {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+/* Product pages */
+
+.product-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.62fr);
+  gap: clamp(36px, 6vw, 80px);
+  align-items: center;
+  padding: 64px 0 56px;
+}
+
+.product-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.app-icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 20px;
+  box-shadow: 0 10px 26px rgba(33, 43, 44, 0.12);
+}
+
+.product-meta {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--ink-soft);
+  border-radius: 6px;
+  padding: 11px 20px;
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+.button.primary {
+  background: var(--ink-soft);
+  color: #fffaf3;
+}
+
+.button.primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fffaf3;
+}
+
+.hero-shot {
+  width: min(100%, 300px);
+  height: auto;
+  margin: 0 auto;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.shot-strip {
+  display: grid;
+  grid-auto-columns: minmax(200px, 240px);
+  grid-auto-flow: column;
+  gap: 18px;
+  margin-top: 30px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-snap-type: x mandatory;
+}
+
+.shot-strip img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(33, 43, 44, 0.08);
+  scroll-snap-align: start;
+}
+
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shot-strip + .feature-list {
+  margin-top: 36px;
+}
+
+.feature-list li {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.feature-list h3 {
+  font-size: 1.02rem;
+}
+
+.feature-list p,
+.note {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.note {
+  margin-top: 24px;
+}
+
+.faq details {
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+}
+
+.faq details:first-of-type {
+  border-top: 1px solid var(--line);
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq details p,
+.faq details li {
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.faq details p {
+  margin: 10px 0 0;
+}
+
+.faq details ul {
+  margin: 10px 0 0;
+  padding-left: 1.2rem;
+}
+
+.faq h2 {
+  margin-bottom: 14px;
+}
+
+.lead a,
+.legal-block a {
+  color: var(--accent-2);
+}
+
+.contact-mail {
+  color: var(--accent-2);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 34px 0;
@@ -370,7 +591,8 @@ h3 {
   }
 
   .hero,
-  .two-col {
+  .two-col,
+  .product-hero {
     grid-template-columns: 1fr;
   }
 
@@ -391,6 +613,10 @@ h3 {
 
   .footer-inner {
     flex-direction: column;
+  }
+
+  .nav-menu-panel {
+    left: 0;
   }
 
   .info-table th,

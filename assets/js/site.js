@@ -24,5 +24,23 @@
     node.textContent = new Date().getFullYear();
   });
 
+  // Close the header dropdown on an outside click or Escape - <details>
+  // otherwise stays open until its own summary is clicked again.
+  document.addEventListener("click", function (event) {
+    document.querySelectorAll(".nav-menu[open]").forEach(function (menu) {
+      if (!menu.contains(event.target)) {
+        menu.removeAttribute("open");
+      }
+    });
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      document.querySelectorAll(".nav-menu[open]").forEach(function (menu) {
+        menu.removeAttribute("open");
+      });
+    }
+  });
+
   applyLang(lang);
 })();
